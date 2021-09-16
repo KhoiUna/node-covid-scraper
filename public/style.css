@@ -44,6 +44,12 @@ h1 {
   box-shadow: 0 0.5rem 1rem 0.5rem rgb(0 0 0 / 15%);
 }
 .data p {
-  font-size: 1.4rem;
+  font-size: 2rem;
   margin: 0.5rem 0 0 0;
+}
+.data #death {
+  color: #ff0000;
+}
+.data #recover {
+  color: #1ead19;
 }
