@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+
+    <title>Thông tin COVID-19 | Việt Nam</title>
+  </head>
+  <body onload="displayData()">
+    <header>
+      <h1>Ca nhiễm COVID-19 ở Việt Nam</h1>
+
+      <section class="source_info">
+        <p>
+          <span class="underline">Thông tin từ:</span>
+          <a
+            href="https://www.worldometers.info/coronavirus/country/viet-nam/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Worldometers</a
+          >
+        </p>
+        <p>
+          <span class="underline">Lần cập nhật gần nhất:</span>
+          <span id="last-updated"></span>
+        </p>
+      </section>
+    </header>
+
+    <main>
+      <div id="container">
+        <section class="data">
+          <h2>Tổng số ca nhiễm:</h2>
+          <p id="total"></p>
+        </section>
+
+        <section class="data">
+          <h2>Tổng số ca tử vong:</h2>
+          <p id="death"></p>
+        </section>
+
+        <section class="data">
+          <h2>Tổng số ca phục hồi:</h2>
+          <p id="recover"></p>
+        </section>
+      </div>
+    </main>
+  </body>
+
+  <script>
+    const fetchCovidData = async () => await (await fetch("/api/data")).json();
+
+    const displayData = async (e) => {
+      const { lastUpdated, cases, deaths, recovered } = await fetchCovidData();
+
+      document.querySelector("#last-updated").innerText = new Date(
+        lastUpdated
+      ).toLocaleString();
+      document.querySelector("#total").innerText = cases;
+      document.querySelector("#death").innerText = deaths;
+      document.querySelector("#recover").innerText = recovered;
+    };
+  </script>
+</html>
