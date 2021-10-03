@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Quicksand:wght@500;700&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -5,19 +7,26 @@
 
 body {
   text-align: center;
-  background-color: #e0e0e0;
+  background-color: #ffd074;
 }
 
 h1 {
-  color: #ffff00;
-  background-color: #ff0000;
+  color: #fff;
+  background-color: #ea2222;
   padding: 0.8rem;
+  font-family: "Montserrat", sans-serif;
+  font-size: 2.25rem;
 }
 
 .source_info {
   background-color: #fff;
   padding: 1rem;
   text-align: left;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  text-align: center;
+  font-family: "Quicksand", sans-serif;
+  font-size: 1.125rem;
 }
 .source_info .underline {
   font-weight: bold;
@@ -38,18 +47,33 @@ h1 {
   width: fit-content;
   margin: 3rem auto;
   padding: 1.5rem;
-  border: 3px solid #000;
-  border-radius: 15px;
+  border-top-left-radius: 20px;
   background-color: #fff;
-  box-shadow: 0 0.5rem 1rem 0.5rem rgb(0 0 0 / 15%);
+}
+.data .data-title {
+  font-family: "Quicksand", sans-serif;
+  font-size: 1.5625rem;
 }
 .data p {
-  font-size: 2rem;
+  font-family: "Quicksand", sans-serif;
+  font-size: 3rem;
   margin: 0.5rem 0 0 0;
+}
+.data #total {
+  color: #1043c6;
 }
 .data #death {
   color: #ff0000;
 }
 .data #recover {
   color: #1ead19;
+}
+#data-total {
+  box-shadow: 12px 13px 0px -1px #c32f27, 16px 21px 10px 0px #353535;
+}
+#data-death {
+  box-shadow: 12px 13px 0px -1px #d8572a, 16px 21px 10px 0px #353535;
+}
+#data-recover {
+  box-shadow: 12px 13px 0px -1px #db7c26, 16px 21px 10px 0px #353535;
 }

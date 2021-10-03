@@ -8,13 +8,14 @@
 
     <title>Thông tin COVID-19 | Việt Nam</title>
   </head>
+
   <body onload="displayData()">
     <header>
       <h1>Ca nhiễm COVID-19 ở Việt Nam</h1>
 
       <section class="source_info">
         <p>
-          <span class="underline">Thông tin từ:</span>
+          <span class="underline">Nguồn:</span>
           <a
             href="https://www.worldometers.info/coronavirus/country/viet-nam/"
             target="_blank"
@@ -31,19 +32,19 @@
 
     <main>
       <div id="container">
-        <section class="data">
-          <h2>Tổng số ca nhiễm:</h2>
-          <p id="total"></p>
+        <section class="data" id="data-total">
+          <h2 class="data-title">Tổng số ca nhiễm:</h2>
+          <p id="total">1</p>
         </section>
 
-        <section class="data">
-          <h2>Tổng số ca tử vong:</h2>
-          <p id="death"></p>
+        <section class="data" id="data-death">
+          <h2 class="data-title">Tổng số ca tử vong:</h2>
+          <p id="death">1</p>
         </section>
 
-        <section class="data">
-          <h2>Tổng số ca phục hồi:</h2>
-          <p id="recover"></p>
+        <section class="data" id="data-recover">
+          <h2 class="data-title">Tổng số ca phục hồi:</h2>
+          <p id="recover">1</p>
         </section>
       </div>
     </main>
