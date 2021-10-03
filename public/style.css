@@ -25,18 +25,19 @@ h1 {
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
   text-align: center;
-  font-family: "Quicksand", sans-serif;
-  font-size: 1.125rem;
 }
-.source_info .underline {
+.source_info .underline,
+.source_info a {
   font-weight: bold;
 }
 .source_info p {
   margin: 0 0 0.5rem 0;
-  font-size: 1.2rem;
+  font-family: "Quicksand", sans-serif;
+  font-size: 1.125rem;
 }
 .source_info #last-updated {
-  font-style: italic;
+  /* font-style: italic; */
+  font-weight: bold;
 }
 
 #container {
@@ -69,11 +70,11 @@ h1 {
   color: #1ead19;
 }
 #data-total {
-  box-shadow: 12px 13px 0px -1px #c32f27, 16px 21px 10px 0px #353535;
+  box-shadow: 20px 20px 0px -1px #c32f27, 25px 26px 12px 0px #353535;
 }
 #data-death {
-  box-shadow: 12px 13px 0px -1px #d8572a, 16px 21px 10px 0px #353535;
+  box-shadow: 20px 20px 0px -1px #d8572a, 25px 26px 12px 0px #353535;
 }
 #data-recover {
-  box-shadow: 12px 13px 0px -1px #db7c26, 16px 21px 10px 0px #353535;
+  box-shadow: 20px 20px 0px -1px #db7c26, 25px 26px 12px 0px #353535;
 }
