@@ -21,7 +21,7 @@ app.get("/api/data", (req, res, next) => {
 
       //Scrape covid cases number
       $("div .maincounter-number > span", html).each((i, el) => {
-        const value = Number($(el).text().replace(",", ""));
+        const value = Number($(el).text().split(",").join(""));
 
         switch (i) {
           case 0:
