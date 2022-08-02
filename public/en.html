@@ -8,16 +8,35 @@
     <link rel="icon" href="./favicon.ico" />
     <link rel="stylesheet" href="./style.css" />
 
-    <title>Thông tin COVID-19 | Việt Nam</title>
+    <title>Vietnam | COVID-19 Information</title>
   </head>
 
   <body onload="displayData()">
     <header>
-      <h1>Ca nhiễm COVID-19 ở Việt Nam</h1>
+      <div
+        class="language"
+        style="padding: 0.3rem; display: flex; justify-content: end"
+      >
+        <a href="/"
+          ><p
+            style="
+              margin: 0.2rem;
+              font-weight: bold;
+              text-decoration: underline;
+            "
+          >
+            EN
+          </p></a
+        >
+        |
+        <a href="/vn"><p style="margin: 0.2rem">VN</p></a>
+      </div>
+
+      <h1>COVID-19 cases in Vietnam</h1>
 
       <section class="source_info">
         <p>
-          <span class="underline">Nguồn:</span>
+          <span class="underline">Source:</span>
           <a
             href="https://www.worldometers.info/coronavirus/country/viet-nam/"
             target="_blank"
@@ -26,7 +45,7 @@
           >
         </p>
         <p>
-          <span class="underline">Lần cập nhật gần nhất:</span>
+          <span class="underline">Last updated time:</span>
           <span id="last-updated"></span>
         </p>
       </section>
@@ -35,35 +54,26 @@
     <main>
       <div id="container">
         <section class="data" id="data-total">
-          <h2 class="data-title">Tổng số ca nhiễm:</h2>
+          <h2 class="data-title">Total cases:</h2>
           <p id="total">...</p>
         </section>
 
         <section class="data" id="data-death">
-          <h2 class="data-title">Tổng số ca tử vong:</h2>
+          <h2 class="data-title">Total deaths:</h2>
           <p id="death">...</p>
         </section>
 
         <section class="data" id="data-recover">
-          <h2 class="data-title">Tổng số ca phục hồi:</h2>
+          <h2 class="data-title">Total recovered:</h2>
           <p id="recover">...</p>
         </section>
       </div>
     </main>
+
+    <footer>
+      <p>Made by <a href="https://khoiuna.info/">Khoi Nguyen</a></p>
+    </footer>
   </body>
 
-  <script>
-    const fetchCovidData = async () => await (await fetch("/api/data")).json();
-
-    const displayData = async (e) => {
-      const { lastUpdated, cases, deaths, recovered } = await fetchCovidData();
-
-      document.querySelector("#last-updated").innerText = new Date(
-        lastUpdated
-      ).toLocaleString();
-      document.querySelector("#total").innerText = cases;
-      document.querySelector("#death").innerText = deaths;
-      document.querySelector("#recover").innerText = recovered;
-    };
-  </script>
+  <script src="./script.js"></script>
 </html>

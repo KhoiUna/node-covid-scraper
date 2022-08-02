@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Xem thông tin COVID-19 ở Việt Nam" />
+    <link rel="icon" href="./favicon.ico" />
+    <link rel="stylesheet" href="./style.css" />
+
+    <title>Thông tin COVID-19 | Việt Nam</title>
+  </head>
+
+  <body onload="displayData()">
+    <header>
+      <div
+        class="language"
+        style="padding: 0.3rem; display: flex; justify-content: end"
+      >
+        <a href="/"><p style="margin: 0.2rem">EN</p></a>
+        |
+        <a href="/vn"
+          ><p
+            style="
+              margin: 0.2rem;
+              font-weight: bold;
+              text-decoration: underline;
+            "
+          >
+            VN
+          </p></a
+        >
+      </div>
+
+      <h1>Ca nhiễm COVID-19 ở Việt Nam</h1>
+
+      <section class="source_info">
+        <p>
+          <span class="underline">Nguồn:</span>
+          <a
+            href="https://www.worldometers.info/coronavirus/country/viet-nam/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Worldometers</a
+          >
+        </p>
+        <p>
+          <span class="underline">Lần cập nhật gần nhất:</span>
+          <span id="last-updated"></span>
+        </p>
+      </section>
+    </header>
+
+    <main>
+      <div id="container">
+        <section class="data" id="data-total">
+          <h2 class="data-title">Tổng số ca nhiễm:</h2>
+          <p id="total">...</p>
+        </section>
+
+        <section class="data" id="data-death">
+          <h2 class="data-title">Tổng số ca tử vong:</h2>
+          <p id="death">...</p>
+        </section>
+
+        <section class="data" id="data-recover">
+          <h2 class="data-title">Tổng số ca phục hồi:</h2>
+          <p id="recover">...</p>
+        </section>
+      </div>
+    </main>
+
+    <footer>
+      <p>Made by <a href="https://khoiuna.info/">Khoi Nguyen</a></p>
+    </footer>
+  </body>
+
+  <script src="./script.js"></script>
+</html>

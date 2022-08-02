@@ -1,15 +1,27 @@
-const rp = require("request-promise");
 const cheerio = require("cheerio");
 const express = require("express");
+const bent = require("bent");
 const app = express();
 
 const url = "https://www.worldometers.info/coronavirus/country/viet-nam/";
 const { PORT = 3000 } = process.env;
 
+app.get("/", (req, res) => {
+  res.sendFile(__dirname + "/public/en.html");
+});
+
+app.get("/vn", (req, res) => {
+  res.sendFile(__dirname + "/public/vn.html");
+});
+
 app.use(express.static("public"));
 
-app.get("/api/data", (req, res, next) => {
-  rp(url)
+app.get("/api/data", async (req, res, next) => {
+  const getStream = bent(url);
+  const stream = await getStream();
+
+  stream
+    .text()
     .then((html) => {
       const $ = cheerio.load(html);
 
