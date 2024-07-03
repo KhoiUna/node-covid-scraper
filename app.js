@@ -4,7 +4,7 @@ const bent = require("bent");
 const app = express();
 
 const url = "https://www.worldometers.info/coronavirus/country/viet-nam/";
-const { PORT = 3000 } = process.env;
+const { PORT = 3001 } = process.env;
 
 app.get("/", (req, res) => {
   res.sendFile(__dirname + "/public/en.html");
